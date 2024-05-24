@@ -1,14 +1,16 @@
 export class VisualAdaptation {
-  constructor(screenWidth, sideMenuWidth) {
+  screenWidth: number;
+  sideMenuWidth: number;
+
+  constructor(screenWidth: number, sideMenuWidth: number) {
     this.screenWidth = screenWidth;
     this.sideMenuWidth = sideMenuWidth;
   }
+
   whichDeviceView = () => {
     return this.screenWidth > 768 ? "deskView" : "mobileView";
   };
-  isShowedConversation = () => {
-    return this.screenWidth - this.sideMenuWidth > 768;
-  };
+
   getConversationWidth = () => {
     return this.screenWidth - this.sideMenuWidth;
   };

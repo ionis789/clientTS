@@ -1,0 +1,27 @@
+import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import GlobalDialogsList from "./GlobalDialogsList.js";
+import Preloader from "../../../../ReusableComponnets/Preloader/Preloader.js";
+import { getMatchedUsers, initiatePotentialRoomTC, } from "../../../../redux/reducers/rooms.js";
+import defaultUserImg from "../../../../assets/default_user_img.svg";
+const GlobalDialogsListC = ({ isFetching, searchText, getMatchedUsers, allRoomsData, initiatePotentialRoomTC, updatedUsers, selectedGlobalUserID, }) => {
+    useEffect(() => {
+        const avoidUsers = allRoomsData.map((room) => room.userCompanionInfo.user_name);
+        getMatchedUsers(searchText, avoidUsers);
+    }, [searchText]);
+    return (_jsx(_Fragment, { children: isFetching ? (_jsx("div", { className: "flex justify-center items-center", children: _jsx(Preloader, {}) })) : (_jsx(GlobalDialogsList, { defaultUserImg: defaultUserImg, initiatePotentialRoomTC: initiatePotentialRoomTC, updatedUsers: updatedUsers, selectedGlobalUserID: selectedGlobalUserID })) }));
+};
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.preloader.isFetching,
+        searchText: state.search.searchText,
+        allRoomsData: state.rooms.allRoomsData,
+        updatedUsers: state.users.usersData,
+        selectedGlobalUserID: state.rooms.selectedGlobalUserID,
+    };
+};
+export default connect(mapStateToProps, {
+    getMatchedUsers,
+    initiatePotentialRoomTC,
+})(GlobalDialogsListC);
