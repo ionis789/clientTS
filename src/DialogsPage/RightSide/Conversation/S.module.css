@@ -1,0 +1,7 @@
+.mobileView {
+    height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border: #ea1e1e solid 10px;
+}
