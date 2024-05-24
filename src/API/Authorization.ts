@@ -27,7 +27,6 @@ class Authorization {
   }
   async logInRequest(mail, password) {
     try {
-      debugger;
       const response = await axios.post(`${API}/auth/login`, {
         mail,
         password,

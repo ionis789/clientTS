@@ -33,7 +33,6 @@ const auth = (state = defaultState, action) => {
       };
     }
     case LOG_RESPONSE: {
-      debugger;
       return {
         ...state,
         logResponse: action.response,

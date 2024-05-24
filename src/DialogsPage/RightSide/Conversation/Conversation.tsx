@@ -10,7 +10,6 @@ const Conversation = ({
   selectRoom,
   isFocus,
 }) => {
-  debugger;
   return (
     <>
       {/*daca este un utilizator cu care am un room*/}
