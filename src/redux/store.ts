@@ -6,7 +6,7 @@ import {
 import search from "./reducers/search.ts";
 import users from "./reducers/users.ts";
 import preloader from "./reducers/preloader.ts";
-import rooms from "./reducers/rooms.ts";
+import rooms from "./reducers/rooms.js";
 import messagesSender from "./reducers/messages.ts";
 import auth from "./reducers/auth.ts";
 import visualState from "./reducers/visualState.ts";

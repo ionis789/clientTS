@@ -1,6 +1,6 @@
 import Conversation from "./Conversation/Conversation.tsx";
 import { connect } from "react-redux";
-import { createRoomTC, selectRoom } from "../../redux/reducers/rooms.ts";
+import { createRoomTC, selectRoom } from "../../redux/reducers/rooms.js";
 const RightSide = ({
   potentialRoom,
   loggedUserID,

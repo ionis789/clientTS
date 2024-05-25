@@ -76,20 +76,20 @@ export const regSubmitTC = (mail, name, password) => async (dispatch) => {
   dispatch(regResponse(response));
 };
 
-export const logOut = (): { type: typeof LOG_OUT } => ({ type: LOG_OUT });
+export const logOut = () => ({ type: LOG_OUT });
 
-export const loadUserData = (): { type: typeof LOAD_USER_DATA } => ({
+export const loadUserData = () => ({
   type: LOAD_USER_DATA,
 });
-export const regResponse = (response): { type: typeof REG_RESPONSE } => ({
+export const regResponse = (response) => ({
   type: REG_RESPONSE,
   response,
 });
-export const logResponse = (response): { type: typeof LOG_RESPONSE } => ({
+export const logResponse = (response) => ({
   type: LOG_RESPONSE,
   response,
 });
-export const resetAuthResponse = (): { type: typeof RESET_AUTH_RESPONSE } => ({
+export const resetAuthResponse = () => ({
   type: RESET_AUTH_RESPONSE,
 });
 export default auth;
